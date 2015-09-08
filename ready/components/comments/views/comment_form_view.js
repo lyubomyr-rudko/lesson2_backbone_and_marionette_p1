@@ -3,6 +3,7 @@ require('backbone');
 
 var template = require('html!../templates/comment_form_template.html');
 var _ = require('lodash');
+var moment = require('moment');
 var CommentFormView = Backbone.View.extend({
 	initialize: function () {
 		this.model = new Backbone.Model();
@@ -24,6 +25,7 @@ var CommentFormView = Backbone.View.extend({
 			commentText = textarea.val();
 
 		this.model.set('text', commentText);
+		this.model.set('date', moment().format('MMMM Do YYYY, h:mm:ss a'));
 	},
 
 	resetForm: function () {

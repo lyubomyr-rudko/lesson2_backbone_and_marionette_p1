@@ -9,4 +9,3 @@ $(function () {
 
 	c.render();
 });
-
